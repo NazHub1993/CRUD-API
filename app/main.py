@@ -1,5 +1,8 @@
 from fastapi import FastAPI 
+from app.routers import read
+
 app=FastAPI()
+app.include_router(read.router)
 
 @app.get("/")
 def start_server():
